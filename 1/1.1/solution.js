@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
 try {
-  const data = fs.readFileSync("./input.txt", "utf8").toString().split("\n");
+  const data = fs.readFileSync("../input.txt", "utf8").toString().split("\n");
   console.log(data);
 
   let curr = 50;
@@ -15,7 +15,7 @@ try {
       if (res % 100 === 0) {
         zeroCounter++;
       }
-      curr = res;
+      curr += value;
     }
 
     if (data[i].startsWith("L")) {
@@ -23,7 +23,7 @@ try {
       if (res % 100 === 0) {
         zeroCounter++;
       }
-      curr = res;
+      curr -= value;
     }
   }
 
